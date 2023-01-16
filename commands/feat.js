@@ -144,13 +144,13 @@ module.exports = {
       if(selectOptions.length > 0){
         components = [row];
       }
-      interaction.reply({ embeds: [embed], components: components, ephemeral: ephemeral });
+      interaction.deferReply({ embeds: [embed], components: components, ephemeral: ephemeral });
       
     }).catch((error) => {
 
       console.error(error);
       
-      interaction.reply({ content: `:warning: Failed to fetch action / feat with name "${name}" :warning:`, ephemeral: ephemeral });
+      interaction.deferReply({ content: `:warning: Failed to fetch action / feat with name "${name}" :warning:`, ephemeral: ephemeral });
 
     });
     

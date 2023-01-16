@@ -254,7 +254,7 @@ module.exports = {
       .setFooter({
         text: (source == 'bomb-or-spell' ? 'Bomb or Spell' : Utils.capitalizeWords(source) ) });
     
-    interaction.reply({ embeds: [embed], ephemeral: false });
+    interaction.deferReply({ embeds: [embed], ephemeral: false });
 
   },
 };
