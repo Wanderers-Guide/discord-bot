@@ -283,7 +283,7 @@ module.exports = {
       .setURL(`https://paizo.com/products/btq02ao7?Pathfinder-Hero-Point-Deck`)
       .setDescription(description);
     
-    interaction.deferReply({ embeds: [embed], ephemeral: false });
+    interaction.reply({ embeds: [embed], ephemeral: false });
 
   },
 };

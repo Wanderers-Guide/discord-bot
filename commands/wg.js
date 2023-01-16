@@ -28,7 +28,7 @@ module.exports = {
         _Displays a random card from the Hero Point deck._
       `);
 
-    interaction.deferReply({ embeds: [embed], ephemeral: true });
+    interaction.reply({ embeds: [embed], ephemeral: true });
     
   },
 };

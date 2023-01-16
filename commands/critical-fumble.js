@@ -255,7 +255,7 @@ module.exports = {
       .setDescription(effect.text)
       .setFooter({ text: Utils.capitalizeWords(source) });
     
-    interaction.deferReply({ embeds: [embed], ephemeral: false });
+    interaction.reply({ embeds: [embed], ephemeral: false });
 
   },
 };

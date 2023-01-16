@@ -16,6 +16,7 @@ module.exports = {
         .setRequired(true)),
 
   async execute(interaction, name, ephemeral=true) {
+    await interaction.deferReply({ ephemeral });
 
     await fetch(apiUrl+'trait?name='+encodeURIComponent(name), {
       method: 'GET',
@@ -91,13 +92,13 @@ module.exports = {
       if(selectOptions.length > 0){
         components = [row];
       }
-      interaction.deferReply({ embeds: [embed], components: components, ephemeral: ephemeral });
+      interaction.editReply({ embeds: [embed], components: components, ephemeral: ephemeral });
       
     }).catch((error) => {
 
       console.error(error);
       
-      interaction.deferReply({ content: `:warning: Failed to fetch trait with name "${name}" :warning:`, ephemeral: ephemeral });
+      interaction.editReply({ content: `:warning: Failed to fetch trait with name "${name}" :warning:`, ephemeral: ephemeral });
 
     });
     

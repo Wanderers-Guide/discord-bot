@@ -47,7 +47,7 @@ client.on('interactionCreate', async interaction => {
       await command.execute(interaction, interaction.options.getString('name'));
     } catch (error) {
       console.error(error);
-      await interaction.deferReply({ content: 'There was an error while executing this command!', ephemeral: true });
+      await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
     }
 
   } else if(interaction.isSelectMenu()){
@@ -65,7 +65,7 @@ client.on('interactionCreate', async interaction => {
           await command.execute(interaction, name);
         } catch (error) {
           console.error(error);
-          await interaction.deferReply({ content: 'There was an error while executing this command!', ephemeral: true });
+          await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
         }
 
       }
