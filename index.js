@@ -8,6 +8,11 @@ const app = express();
 
 const port = process.env.PORT || 8000;
 
+
+app.get('/', (req, res) => {
+  res.send('WG Discord Bot')
+});
+
 app.listen(port, function () {
     console.log("API Server is running on "+ port +" port");
 });
