@@ -6,7 +6,8 @@ const express = require('express');
 
 const app = express();
 
-const port = 8000;
+const port = process.env.PORT || 8000;
+
 app.listen(port, function () {
     console.log("API Server is running on "+ port +" port");
 });
