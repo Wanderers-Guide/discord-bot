@@ -56,7 +56,12 @@ client.on('interactionCreate', async interaction => {
         let name = valueParts[1];
 
         const command = client.commands.get(type);
-        await command.execute(interaction, name);
+        try {
+          await command.execute(interaction, name);
+        } catch (error) {
+          console.error(error);
+          await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+        }
 
       }
 
